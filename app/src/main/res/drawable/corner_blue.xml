@@ -1,0 +1,6 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+  android:shape="oval">
+  <corners android:radius="@dimen/dimen14" />
+  <solid android:color="@color/button" />
+
+</shape>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <data>
+
+    <variable
+      name="itemViewModels"
+      type="app.grand.tafwak.presentation.home.viewModels.ItemSliderViewModel" />
+  </data>
+
+  <androidx.appcompat.widget.AppCompatImageView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scaleType="centerCrop"
+    android:src="@drawable/splash"
+    app:loadImage="@{itemViewModels.slider.image}" />
+</layout>

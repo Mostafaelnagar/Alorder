@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+  <item>
+    <shape>
+      <solid android:color="@color/button" />
+      <corners android:radius="@dimen/dimen10" />
+    </shape>
+  </item>
+
+  <item
+    android:bottom="@dimen/dimen2"
+    android:drawable="@drawable/ic_remove"
+    android:left="@dimen/dimen2"
+    android:right="@dimen/dimen2"
+    android:top="@dimen/dimen2" />
+</layer-list>

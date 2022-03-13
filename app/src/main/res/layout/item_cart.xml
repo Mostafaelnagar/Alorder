@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <data>
+
+    <import type="app.grand.tafwak.presentation.base.utils.Constants" />
+
+    <variable
+      name="itemViewModels"
+      type="app.grand.tafwak.presentation.home.viewModels.ItemSectionViewModel" />
+  </data>
+
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dimen4">
+
+    <androidx.cardview.widget.CardView
+      android:id="@+id/card_image"
+      android:layout_width="@dimen/dimen80"
+      android:layout_height="@dimen/dimen80"
+      android:layout_margin="@dimen/dimen8"
+      app:cardCornerRadius="@dimen/dimen6"
+      app:cardElevation="2dp"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent">
+
+      <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/oxi" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/tv_product_name"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="@dimen/dimen10"
+      android:layout_marginEnd="@dimen/dimen10"
+      android:text="جبنه دومتى"
+      android:textAlignment="viewStart"
+      android:textAppearance="@style/TextAppearance.AppCompat.Small"
+      android:textColor="@color/lightBlack"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@id/card_image"
+      app:layout_constraintTop_toTopOf="@id/card_image" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/tv_product_desc"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="@dimen/dimen10"
+      android:layout_marginTop="@dimen/dimen4"
+      android:layout_marginEnd="@dimen/dimen10"
+      android:text="كرتونه 12 قطعه"
+      android:textAlignment="viewStart"
+      android:textAppearance="@style/TextAppearance.AppCompat.Small"
+      android:textColor="@color/gray"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@id/card_image"
+      app:layout_constraintTop_toBottomOf="@id/tv_product_name" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/tv_price"
+      style="@style/TextMediumFont"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/dimen10"
+      android:text="140 ج.م"
+      android:textAlignment="center"
+      android:textColor="@color/button"
+      android:textSize="@dimen/text_size13"
+      app:layout_constraintStart_toEndOf="@+id/card_image"
+      app:layout_constraintTop_toBottomOf="@+id/tv_product_desc" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/tv_old_price"
+      style="@style/TextMediumFont"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/dimen10"
+      android:background="@drawable/old_price_line"
+      android:text="180 ج.م"
+      android:textAlignment="center"
+      android:textColor="@color/black_op"
+      android:textSize="@dimen/text_size13"
+      app:layout_constraintStart_toEndOf="@+id/tv_price"
+      app:layout_constraintTop_toBottomOf="@+id/tv_product_desc" />
+
+
+    <com.github.guilhe.views.QuantityPickerView
+      android:id="@+id/tv_counter"
+      android:layout_width="@dimen/dimen150"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/dimen10"
+      app:backgroundColor="@color/lightGray"
+      app:btnAdd="@drawable/plus"
+      app:btnRemove="@drawable/minus"
+      app:isOpen="true"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@id/tv_old_price"
+      app:layout_constraintTop_toBottomOf="@id/tv_product_desc"
+      app:min="1"
+      app:textLabelFormatter="%s"
+      app:textLabelSize="14sp"
+      app:value="1" />
+
+    <View
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/dimen1"
+      android:layout_marginTop="@dimen/dimen10"
+      android:background="@color/lightGray"
+      app:layout_constraintTop_toBottomOf="@id/tv_counter" />
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Alorder.iml" filepath="$PROJECT_DIR$/.idea/modules/Alorder.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Alorder.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Alorder.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Alorder.buildSrc.iml" filepath="$PROJECT_DIR$/.idea/modules/Alorder.buildSrc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/prettyPopUp/Alorder.prettyPopUp.iml" filepath="$PROJECT_DIR$/.idea/modules/prettyPopUp/Alorder.prettyPopUp.iml" />
+    </modules>
+  </component>
+</project>

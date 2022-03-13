@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
+
+  <data>
+
+    <variable
+      name="itemViewModels"
+      type="app.grand.tafwak.presentation.account.adapter.ItemAccountViewModel" />
+  </data>
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dimen10"
+    android:background="@drawable/corner_view_gray_border_account"
+    android:onClick="@{()-> itemViewModels.clickEvent(10)}">
+
+    <androidx.appcompat.widget.AppCompatImageView
+      android:id="@+id/ic_user"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="@dimen/dimen25"
+      android:src="@drawable/ic_profile"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:load_drawable="@{itemViewModels.accountItem.icon}" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/tv_title"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="@dimen/dimen16"
+      android:layout_marginTop="@dimen/dimen10"
+      android:text="@{itemViewModels.accountItem.title}"
+      android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+      android:textColor="@color/colorPrimaryDark"
+      app:layout_constraintStart_toEndOf="@id/ic_user"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:text="معلومات التواصل" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/tv_body"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="@dimen/dimen16"
+      android:layout_marginTop="@dimen/dimen10"
+      android:layout_marginBottom="@dimen/dimen10"
+      android:text="@{itemViewModels.accountItem.body}"
+      android:textAppearance="@style/TextAppearance.AppCompat.Small"
+      android:textColor="@color/button"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintStart_toEndOf="@id/ic_user"
+      app:layout_constraintTop_toBottomOf="@id/tv_title"
+      tools:text="تغيير معلومات التواصل" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+      android:id="@+id/ic_arrow"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="@dimen/dimen16"
+      android:src="@drawable/ic_arrow_back"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

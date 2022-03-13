@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
+
+  <data>
+
+    <import type="app.grand.tafwak.presentation.base.utils.Constants" />
+
+    <variable
+      name="viewModel"
+      type="app.grand.tafwak.presentation.splash.SplashViewModel" />
+  </data>
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <androidx.appcompat.widget.AppCompatImageView
+      android:id="@+id/ic_logo"
+      android:layout_width="@dimen/dimen250"
+      android:layout_height="@dimen/dimen100"
+      android:layout_marginTop="@dimen/dimen40"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:srcCompat="@drawable/logo"
+      tools:ignore="ContentDescription" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+      android:id="@+id/ic_splash"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/dimen40"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/ic_logo"
+      app:srcCompat="@drawable/splash"
+      tools:ignore="ContentDescription" />
+
+    <TextView
+      android:id="@+id/splash_title"
+      style="@style/TextBoldFont"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="@dimen/dimen20"
+      android:layout_marginEnd="@dimen/dimen20"
+      android:text="@string/splash_title"
+      android:textAlignment="center"
+      android:textAppearance="@style/TextAppearance.AppCompat.Large"
+      android:textColor="@color/black"
+      app:layout_constraintTop_toBottomOf="@id/ic_splash" />
+
+    <TextView
+      android:id="@+id/splash_body"
+      style="@style/TextMediumFont"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="@dimen/dimen20"
+      android:layout_marginTop="@dimen/dimen16"
+      android:layout_marginEnd="@dimen/dimen20"
+      android:text="@string/splash_body"
+      android:textAlignment="center"
+      android:textAppearance="@style/TextAppearance.AppCompat.Large"
+      android:textColor="@color/black"
+      app:layout_constraintTop_toBottomOf="@id/splash_title" />
+
+    <com.google.android.material.button.MaterialButton
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/dimen30"
+      android:onClick="@{()-> viewModel.clickEvent(Constants.AUTH)}"
+      android:padding="@dimen/dimen16"
+      android:text="@string/lets"
+      android:textAppearance="@style/TextAppearance.AppCompat.Title"
+      android:textColor="@color/white"
+      app:backgroundTint="@color/colorPrimaryDark"
+      app:cornerRadius="@dimen/dimen20"
+      app:icon="@drawable/ic_arrow_right"
+      app:iconGravity="textEnd"
+      app:iconPadding="@dimen/dimen10"
+      app:layout_constraintTop_toBottomOf="@+id/splash_body" />
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

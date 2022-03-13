@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
+
+  <data>
+
+    <import type="app.grand.tafwak.presentation.base.utils.Constants" />
+
+    <import type="android.view.View" />
+
+    <variable
+      name="viewModel"
+      type="app.grand.tafwak.presentation.update_enterprise.viewModel.UpdateEnterpriseViewModel" />
+  </data>
+
+  <androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
+      <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ic_logo"
+        android:layout_width="@dimen/dimen250"
+        android:layout_height="@dimen/dimen100"
+        android:layout_marginTop="@dimen/dimen40"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_enterprise" />
+
+      <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_building_info"
+        style="@style/TextMediumFont"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen16"
+        android:text="@string/tv_building_info"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ic_logo" />
+
+      <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_name_building"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen18"
+        android:layout_marginEnd="@dimen/dimen14"
+        android:hint="@string/input_name_building"
+        android:textColorHint="@color/gray"
+        app:boxCornerRadiusBottomEnd="@dimen/dimen16"
+        app:boxCornerRadiusBottomStart="@dimen/dimen16"
+        app:boxCornerRadiusTopEnd="@dimen/dimen16"
+        app:boxCornerRadiusTopStart="@dimen/dimen16"
+        app:helperTextTextColor="@color/gray"
+        app:hintTextAppearance="@style/TextAppearance.AppCompat.Small"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tv_building_info"
+        app:layout_constraintTop_toBottomOf="@+id/tv_building_info">
+
+        <androidx.appcompat.widget.AppCompatEditText
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:inputType="text"
+          android:textAppearance="@style/TextAppearance.AppCompat.Small"
+          android:textColor="@color/black"
+          android:textColorHint="@color/black" />
+      </com.google.android.material.textfield.TextInputLayout>
+
+      <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_name_building_location"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen18"
+        android:layout_marginEnd="@dimen/dimen14"
+        android:hint="@string/input_name_building_location"
+        android:textColorHint="@color/gray"
+        app:boxCornerRadiusBottomEnd="@dimen/dimen16"
+        app:boxCornerRadiusBottomStart="@dimen/dimen16"
+        app:boxCornerRadiusTopEnd="@dimen/dimen16"
+        app:boxCornerRadiusTopStart="@dimen/dimen16"
+        app:helperTextTextColor="@color/gray"
+        app:hintTextAppearance="@style/TextAppearance.AppCompat.Small"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tv_building_info"
+        app:layout_constraintTop_toBottomOf="@+id/input_name_building">
+
+        <androidx.appcompat.widget.AppCompatEditText
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:inputType="text"
+          android:textAppearance="@style/TextAppearance.AppCompat.Small"
+          android:textColor="@color/black"
+          android:textColorHint="@color/black" />
+      </com.google.android.material.textfield.TextInputLayout>
+
+      <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen6"
+        android:onClick="@{()->viewModel.clickEvent(Constants.REVIEW_DIALOG)}"
+        android:src="@drawable/ic_location"
+        app:layout_constraintBottom_toBottomOf="@id/input_name_building_location"
+        app:layout_constraintEnd_toEndOf="@id/input_name_building_location"
+        app:layout_constraintTop_toTopOf="@id/input_name_building_location" />
+
+      <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_city"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen18"
+        android:layout_marginEnd="@dimen/dimen14"
+        android:hint="@string/input_city_name"
+        android:textColorHint="@color/gray"
+        app:boxCornerRadiusBottomEnd="@dimen/dimen16"
+        app:boxCornerRadiusBottomStart="@dimen/dimen16"
+        app:boxCornerRadiusTopEnd="@dimen/dimen16"
+        app:boxCornerRadiusTopStart="@dimen/dimen16"
+        app:helperTextTextColor="@color/gray"
+        app:hintTextAppearance="@style/TextAppearance.AppCompat.Small"
+        app:layout_constraintEnd_toStartOf="@+id/input_district"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@id/tv_building_info"
+        app:layout_constraintTop_toBottomOf="@+id/input_name_building_location">
+
+        <androidx.appcompat.widget.AppCompatEditText
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:inputType="text"
+          android:textAppearance="@style/TextAppearance.AppCompat.Small"
+          android:textColor="@color/black"
+          android:textColorHint="@color/black" />
+      </com.google.android.material.textfield.TextInputLayout>
+
+      <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_district"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen18"
+        android:layout_marginEnd="@dimen/dimen14"
+        android:hint="@string/input_district"
+        android:textColorHint="@color/gray"
+        app:boxCornerRadiusBottomEnd="@dimen/dimen16"
+        app:boxCornerRadiusBottomStart="@dimen/dimen16"
+        app:boxCornerRadiusTopEnd="@dimen/dimen16"
+        app:boxCornerRadiusTopStart="@dimen/dimen16"
+        app:helperTextTextColor="@color/gray"
+        app:hintTextAppearance="@style/TextAppearance.AppCompat.Small"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/input_city"
+        app:layout_constraintTop_toBottomOf="@+id/input_name_building_location">
+
+        <androidx.appcompat.widget.AppCompatEditText
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:inputType="text"
+          android:textAppearance="@style/TextAppearance.AppCompat.Small"
+          android:textColor="@color/black"
+          android:textColorHint="@color/black" />
+      </com.google.android.material.textfield.TextInputLayout>
+
+      <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_note"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen18"
+        android:layout_marginEnd="@dimen/dimen14"
+        android:textColorHint="@color/gray"
+        app:boxCornerRadiusBottomEnd="@dimen/dimen16"
+        app:boxCornerRadiusBottomStart="@dimen/dimen16"
+        app:boxCornerRadiusTopEnd="@dimen/dimen16"
+        app:boxCornerRadiusTopStart="@dimen/dimen16"
+        app:helperTextTextColor="@color/gray"
+        app:hintTextAppearance="@style/TextAppearance.AppCompat.Small"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tv_building_info"
+        app:layout_constraintTop_toBottomOf="@+id/input_district">
+
+        <androidx.appcompat.widget.AppCompatEditText
+          android:layout_width="match_parent"
+          android:layout_height="@dimen/dimen80"
+          android:gravity="top"
+          android:hint="@string/input_note"
+          android:inputType="textMultiLine"
+          android:textAppearance="@style/TextAppearance.AppCompat.Small"
+          android:textColor="@color/black"
+          android:textColorHint="@color/black" />
+      </com.google.android.material.textfield.TextInputLayout>
+
+      <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_phone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen30"
+        android:layout_marginEnd="@dimen/dimen12"
+        android:layout_marginBottom="@dimen/dimen30"
+        android:background="@drawable/btn_accent"
+        android:onClick="@{()-> viewModel.clickEvent(Constants.CONFIRM_CODE)}"
+        android:text="@string/save"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tv_building_info"
+        app:layout_constraintTop_toBottomOf="@id/input_note" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+  </androidx.core.widget.NestedScrollView>
+</layout>

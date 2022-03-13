@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_package = "com.structure.base_mvvm";
+option java_multiple_files = true;
+message User{
+  int32 id = 1;
+  string email = 2;
+  string image = 3;
+  int32 register_steps = 4;
+  string nickname = 5;
+  string name = 6;
+  string phone = 7;
+  string account_type = 8;
+  int32 country_id = 9;
+  string token = 10;
+
+}

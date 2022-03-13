@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <data>
+
+  </data>
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatImageView
+      android:id="@+id/detect_location"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/dimen50"
+      android:src="@drawable/ic_success"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/tv_location_title"
+      style="@style/TextBoldFont"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/dimen20"
+      android:layout_marginBottom="@dimen/dimen50"
+      android:gravity="center"
+      android:text="@string/confirm_received_order"
+      android:textAllCaps="true"
+      android:textAppearance="@style/TextAppearance.AppCompat.Title"
+      android:textColor="@color/black"
+      app:layout_constraintTop_toBottomOf="@+id/detect_location" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/tv_location_body"
+      style="@style/TextBoldFont"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/dimen8"
+      android:gravity="center"
+      android:text="ادفع الفلوس للمندوب بمبلغ 1234 ودوس على دفع "
+      android:textAllCaps="true"
+      android:textAppearance="@style/TextAppearance.AppCompat.Small"
+      android:textColor="@color/button"
+      app:layout_constraintTop_toBottomOf="@+id/tv_location_title" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/delivery_payment"
+      style="@style/TextBoldFont"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="@dimen/dimen20"
+      android:layout_marginTop="@dimen/dimen24"
+      android:text="@string/delivery_payment"
+      android:textAlignment="viewStart"
+      android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+      android:textColor="@color/button"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/tv_location_body" />
+
+    <RadioGroup
+      android:id="@+id/payment_group"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/dimen16"
+      android:orientation="vertical"
+      app:layout_constraintTop_toBottomOf="@id/delivery_payment">
+
+      <RadioButton
+        android:id="@+id/radio_cash"
+        style="@style/TextRegularFont"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/corner_view_gray"
+        android:buttonTint="@color/colorPrimaryDark"
+        android:text="@string/cash"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/button" />
+
+      <RadioButton
+        android:id="@+id/radio_debit"
+        style="@style/TextRegularFont"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen16"
+        android:background="@drawable/corner_view_gray"
+        android:buttonTint="@color/colorPrimaryDark"
+        android:text="@string/debit"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/button" />
+
+      <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen16">
+
+        <androidx.appcompat.widget.AppCompatTextView
+          android:id="@+id/delivery_payment_debit"
+          style="@style/TextRegularFont"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/delivery_payment_debit_amout"
+          android:textAlignment="viewStart"
+          android:textAppearance="@style/TextAppearance.AppCompat.Small"
+          android:textColor="@color/black_op"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+          android:id="@+id/input_amount"
+          style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="@dimen/dimen14"
+          android:layout_marginTop="@dimen/dimen18"
+          android:layout_marginEnd="@dimen/dimen14"
+          android:textColorHint="@color/gray"
+          app:boxCornerRadiusBottomEnd="@dimen/dimen16"
+          app:boxCornerRadiusBottomStart="@dimen/dimen16"
+          app:boxCornerRadiusTopEnd="@dimen/dimen16"
+          app:boxCornerRadiusTopStart="@dimen/dimen16"
+          app:helperTextTextColor="@color/gray"
+          app:hintTextAppearance="@style/TextAppearance.AppCompat.Small"
+          app:layout_constraintEnd_toStartOf="@+id/guide"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/delivery_payment_debit">
+
+          <androidx.appcompat.widget.AppCompatEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:text="0.0"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+          android:id="@+id/delivery_order"
+          style="@style/TextRegularFont"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginEnd="8dp"
+          android:text="@string/delivery_total_amount"
+          android:textAlignment="center"
+          android:textAppearance="@style/TextAppearance.AppCompat.Small"
+          android:textColor="@color/button"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toEndOf="@id/guide"
+          app:layout_constraintTop_toTopOf="@+id/input_amount" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+          android:id="@+id/delivery_order_amount"
+          style="@style/TextBoldFont"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginEnd="8dp"
+          android:text="1000 ج.م"
+          android:textAlignment="center"
+          android:textAppearance="@style/TextAppearance.AppCompat.Small"
+          android:textColor="@color/button"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toEndOf="@id/guide"
+          app:layout_constraintTop_toBottomOf="@+id/delivery_order" />
+
+        <androidx.constraintlayout.widget.Guideline
+          android:id="@+id/guide"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:orientation="vertical"
+          app:layout_constraintGuide_percent=".8" />
+      </androidx.constraintlayout.widget.ConstraintLayout>
+
+      <RadioButton
+        android:id="@+id/radio_online"
+        style="@style/TextRegularFont"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen16"
+        android:background="@drawable/corner_view_gray"
+        android:buttonTint="@color/colorPrimaryDark"
+        android:text="@string/online"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/button" />
+
+    </RadioGroup>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+      android:id="@+id/btn_confirm"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="@dimen/dimen16"
+      android:layout_marginTop="@dimen/dimen16"
+      android:layout_marginEnd="@dimen/dimen16"
+      android:layout_marginBottom="@dimen/dimen16"
+      android:background="@drawable/btn_accent"
+      android:text="@string/paied"
+      android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+      android:textColor="@color/white"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/payment_group" />
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <data>
+
+  </data>
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatImageView
+      android:id="@+id/detect_location"
+      android:layout_width="@dimen/dimen150"
+      android:layout_height="@dimen/dimen150"
+      android:layout_marginTop="@dimen/dimen50"
+      android:src="@drawable/ic_delivery_done"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/tv_location_title"
+      style="@style/TextBoldFont"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/dimen20"
+      android:layout_marginBottom="@dimen/dimen50"
+      android:gravity="center"
+      android:text="@string/receiving_done"
+      android:textAllCaps="true"
+      android:textAppearance="@style/TextAppearance.AppCompat.Title"
+      android:textColor="@color/black"
+      app:layout_constraintTop_toBottomOf="@+id/detect_location" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/tv_location_body"
+      style="@style/TextBoldFont"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/dimen8"
+      android:gravity="center"
+      android:text="@string/confirm_delegate"
+      android:textAllCaps="true"
+      android:textAppearance="@style/TextAppearance.AppCompat.Small"
+      android:textColor="@color/black_op"
+      app:layout_constraintTop_toBottomOf="@+id/tv_location_title" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+      android:id="@+id/tv_location_body1"
+      style="@style/TextBoldFont"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/dimen16"
+      android:src="@drawable/ic_spinner"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/tv_location_body" />
+
+    <com.google.android.material.button.MaterialButton
+      android:id="@+id/confirm"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="@dimen/dimen12"
+      android:layout_marginTop="@dimen/dimen30"
+      android:layout_marginEnd="@dimen/dimen12"
+      android:layout_marginBottom="@dimen/dimen10"
+      android:text="@string/cancel"
+      android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+      android:textColor="@color/white"
+      app:backgroundTint="@color/black_op"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/tv_location_body1" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

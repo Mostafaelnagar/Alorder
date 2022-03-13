@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
+
+  <data>
+
+    <import type="app.grand.tafwak.presentation.base.utils.Constants" />
+
+    <variable
+      name="viewModel"
+      type="app.grand.tafwak.presentation.my_orders.viewModels.MyOrderDetailsViewModel" />
+  </data>
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_marginBottom="@dimen/dimen10"
+      app:layout_constraintBottom_toTopOf="@+id/container"
+      app:layout_constraintTop_toTopOf="parent">
+
+      <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+          android:id="@+id/tv_order_id"
+          style="@style/TextMediumFont"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_margin="@dimen/dimen10"
+          android:text="طلبيتك رقم 1234 ع وصول"
+          android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+          android:textColor="@color/colorPrimaryDark"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+          android:id="@+id/tv_order_number"
+          style="@style/TextMediumFont"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_margin="@dimen/dimen10"
+          android:text="الشحنه 2"
+          android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+          android:textColor="@color/gray"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/tv_order_id" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+          android:id="@+id/tv_order_date"
+          style="@style/TextMediumFont"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_margin="@dimen/dimen10"
+          android:text="2022 , يناير 5"
+          android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+          android:textColor="@color/black"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/tv_order_number" />
+
+        <androidx.recyclerview.widget.RecyclerView
+          android:id="@+id/rc_suggested_groups"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_margin="@dimen/dimen10"
+          app:adapter="@{viewModel.adapter}"
+          app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+          app:layout_constraintTop_toBottomOf="@+id/tv_order_date"
+          app:orientation="@{`1`}"
+          app:span="@{`1`}"
+          tools:itemCount="1"
+          tools:layout_editor_absoluteX="19dp"
+          tools:listitem="@layout/item_cart" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+          android:id="@+id/tv_order_price"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_margin="@dimen/dimen16"
+          android:text="@string/total_cost"
+          android:textAlignment="viewStart"
+          android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+          android:textColor="@color/black"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/rc_suggested_groups" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+          android:id="@+id/tv_order_price_value"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_margin="@dimen/dimen16"
+          android:text="300 ج.م"
+          android:textAlignment="viewStart"
+          android:textAppearance="@style/TextAppearance.AppCompat.Small"
+          android:textColor="@color/black"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/rc_suggested_groups" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+          android:id="@+id/tv_order_same_company"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_margin="@dimen/dimen16"
+          android:text="@string/order_same_company"
+          android:textAlignment="viewStart"
+          android:textAppearance="@style/TextAppearance.AppCompat.Small"
+          android:textColor="@color/black"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/tv_order_price" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+          android:id="@+id/tv_order_delegate"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_margin="@dimen/dimen16"
+          android:text="@string/order_delegate"
+          android:textAlignment="viewStart"
+          android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+          android:textColor="@color/black"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/tv_order_same_company" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+          android:id="@+id/delegate_image"
+          android:layout_width="@dimen/dimen60"
+          android:layout_height="@dimen/dimen60"
+          android:layout_margin="@dimen/dimen16"
+          android:padding="@dimen/dimen4"
+          android:scaleType="centerCrop"
+          android:src="@drawable/oxi"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/tv_order_delegate"
+          app:shapeAppearance="@style/ShapeAppearanceOverlay.App.CornerSize50Percent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+          android:id="@+id/tv_order_delegate_name"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="@dimen/dimen10"
+          android:text="@string/order_delegate"
+          android:textAlignment="viewStart"
+          android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+          android:textColor="@color/black"
+          app:layout_constraintStart_toEndOf="@+id/delegate_image"
+          app:layout_constraintTop_toTopOf="@+id/delegate_image" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+          android:id="@+id/tv_order_delegate_phone"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="@dimen/dimen10"
+          android:text="2020001245313"
+          android:textAlignment="viewStart"
+          android:textAppearance="@style/TextAppearance.AppCompat.Small"
+          android:textColor="@color/black_op"
+          app:layout_constraintStart_toEndOf="@+id/delegate_image"
+          app:layout_constraintTop_toBottomOf="@+id/tv_order_delegate_name" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_margin="@dimen/dimen10"
+          android:src="@drawable/ic_call_delegate"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toTopOf="@id/delegate_image" />
+
+        <View
+          android:id="@+id/v1"
+          android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:layout_marginTop="@dimen/dimen16"
+          android:background="@color/gray"
+          app:layout_constraintTop_toBottomOf="@id/delegate_image" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+          android:id="@+id/delivery_location_title"
+          style="@style/TextBoldFont"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="@dimen/dimen20"
+          android:layout_marginTop="@dimen/dimen24"
+          android:text="@string/delivery_location"
+          android:textAlignment="viewStart"
+          android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+          android:textColor="@color/button"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/v1" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+          android:id="@+id/delivery_location"
+          style="@style/TextBoldFont"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_margin="@dimen/dimen20"
+          android:drawableStart="@drawable/ic_location"
+          android:drawablePadding="@dimen/dimen10"
+          android:gravity="center_vertical"
+          android:text="8 شارع ابو عبيده الجراح متفرع من شارع ضياء - الجيزه"
+          android:textAppearance="@style/TextAppearance.AppCompat.Small"
+          android:textColor="@color/button"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/delivery_location_title" />
+
+      </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <RelativeLayout
+      android:id="@+id/container"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="@drawable/white_top_corner"
+      app:layout_constraintBottom_toBottomOf="parent">
+
+      <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen16"
+        android:layout_marginTop="@dimen/dimen16"
+        android:layout_marginEnd="@dimen/dimen16"
+        android:layout_marginBottom="@dimen/dimen16"
+        android:background="@drawable/btn_accent"
+        android:text="@string/confirm_received"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/white" />
+    </RelativeLayout>
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

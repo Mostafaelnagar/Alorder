@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
+
+  <data>
+
+    <import type="app.grand.tafwak.presentation.base.utils.Constants" />
+
+    <variable
+      name="viewModel"
+      type="app.grand.tafwak.presentation.home.viewModels.HomeViewModel" />
+  </data>
+
+  <androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
+      <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_user_name"
+        style="@style/TextMediumFont"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen10"
+        android:text="نورت ي محمد"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toStartOf="@+id/ic_notification"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ic_notification" />
+
+      <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ic_notification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen16"
+        android:src="@drawable/ic_notification"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+      <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/search_home"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen16"
+        android:layout_marginEnd="@dimen/dimen16"
+        android:background="@drawable/corner_view_border_search"
+        android:padding="@dimen/dimen10"
+        android:text="@string/search_home"
+        android:textColor="@color/gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/search"
+        app:layout_constraintTop_toBottomOf="@id/tv_user_name" />
+
+      <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/search"
+        android:layout_width="@dimen/dimen50"
+        android:layout_height="0dp"
+        android:background="@drawable/corner_view_primary_search"
+        android:padding="@dimen/dimen4"
+        android:src="@drawable/chuck_ic_search_white_24dp"
+        app:layout_constraintBottom_toBottomOf="@id/search_home"
+        app:layout_constraintStart_toStartOf="@id/tv_user_name"
+        app:layout_constraintTop_toTopOf="@id/search_home" />
+
+      <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_offers"
+        style="@style/TextMediumFont"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen10"
+        android:text="@string/offers"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@id/imageSlider"
+        app:layout_constraintTop_toBottomOf="@id/search_home" />
+
+      <com.google.android.material.card.MaterialCardView
+        android:id="@+id/imageSlider"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/dimen16"
+        app:cardCornerRadius="@dimen/dimen16"
+        app:layout_constraintTop_toBottomOf="@+id/tv_offers"
+        app:cardElevation="2dp">
+
+        <com.smarteist.autoimageslider.SliderView
+          android:layout_width="match_parent"
+          android:id="@+id/slider"
+          android:layout_height="@dimen/dimen180"
+          app:sliderAnimationDuration="600"
+          app:sliderAutoCycleDirection="back_and_forth"
+          app:sliderAutoCycleEnabled="true"
+          app:sliderIndicatorAnimationDuration="600"
+          app:sliderIndicatorGravity="center_horizontal|bottom"
+          app:sliderIndicatorMargin="15dp"
+          app:sliderIndicatorOrientation="horizontal"
+          app:sliderIndicatorPadding="3dp"
+          app:sliderIndicatorRadius="2dp"
+          app:sliderIndicatorSelectedColor="@color/colorPrimary"
+          app:sliderIndicatorUnselectedColor="@color/white"
+          app:sliderScrollTimeInSec="10"
+          app:sliderStartAutoCycle="true" />
+
+      </com.google.android.material.card.MaterialCardView>
+
+      <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_suggested_teachers"
+        style="@style/TextMediumFont"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen10"
+        android:text="@string/company"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@id/imageSlider"
+        app:layout_constraintTop_toBottomOf="@id/imageSlider" />
+
+      <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_suggested_teachers_all"
+        style="@style/TextRegularFont"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen10"
+        android:onClick="@{()->viewModel.clickEvent(Constants.TEACHERS)}"
+        android:text="@string/all"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageSlider" />
+
+      <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rc_suggested_teachers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen10"
+        android:orientation="horizontal"
+        app:adapter="@{viewModel.adapter}"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@+id/tv_suggested_teachers_all"
+        app:orientation="@{`2`}"
+        app:span="@{`1`}"
+        tools:listitem="@layout/item_companies" />
+
+      <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_sections"
+        style="@style/TextMediumFont"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen10"
+        android:text="@string/sections"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@id/imageSlider"
+        app:layout_constraintTop_toBottomOf="@id/rc_suggested_teachers" />
+
+
+      <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rc_suggested_groups"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen10"
+        app:adapter="@{viewModel.sectionsAdapter}"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintTop_toBottomOf="@+id/tv_sections"
+        app:orientation="@{`1`}"
+        app:span="@{`2`}"
+        app:spanCount="2"
+        tools:listitem="@layout/item_section" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+  </androidx.core.widget.NestedScrollView>
+</layout>

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  app:startDestination="@id/home_fragment">
+
+  <fragment
+    android:id="@+id/home_fragment"
+    android:name="app.grand.tafwak.presentation.home.HomeFragment"
+    tools:layout="@layout/fragment_home">
+
+    <action
+      android:id="@+id/action_home_fragment_to_sectionDetailsFragment"
+      app:destination="@id/sectionDetailsFragment"
+      app:enterAnim="@anim/anim_slide_in_right"
+      app:exitAnim="@anim/anim_slide_out_left"
+      app:popEnterAnim="@anim/anim_slide_in_left"
+      app:popExitAnim="@anim/anim_slide_out_right" />
+    <action
+      android:id="@+id/action_home_fragment_to_searchFragment"
+      app:destination="@id/searchFragment"
+      app:enterAnim="@anim/anim_slide_in_right"
+      app:exitAnim="@anim/anim_slide_out_left"
+      app:popEnterAnim="@anim/anim_slide_in_left"
+      app:popExitAnim="@anim/anim_slide_out_right" />
+    <action
+      android:id="@+id/action_home_fragment_to_companiesFragment"
+      app:destination="@id/companiesFragment"
+      app:enterAnim="@anim/anim_slide_in_right"
+      app:exitAnim="@anim/anim_slide_out_left"
+      app:popEnterAnim="@anim/anim_slide_in_left"
+      app:popExitAnim="@anim/anim_slide_out_right" />
+    <action
+      android:id="@+id/action_home_fragment_to_notificationsFragment"
+      app:destination="@id/notificationsFragment"
+      app:enterAnim="@anim/anim_slide_in_right"
+      app:exitAnim="@anim/anim_slide_out_left"
+      app:popEnterAnim="@anim/anim_slide_in_left"
+      app:popExitAnim="@anim/anim_slide_out_right" />
+  </fragment>
+
+  <fragment
+    android:id="@+id/accountFragment"
+    android:name="app.grand.tafwak.presentation.account.AccountFragment"
+    android:label="@string/account">
+    <action
+      android:id="@+id/action_accountFragment_to_profileFragment"
+      app:destination="@id/profileFragment"
+      app:enterAnim="@anim/anim_slide_in_right"
+      app:exitAnim="@anim/anim_slide_out_left"
+      app:popEnterAnim="@anim/anim_slide_in_left"
+      app:popExitAnim="@anim/anim_slide_out_right" />
+    <action
+      android:id="@+id/action_accountFragment_to_favoriteFragment"
+      app:destination="@id/favoriteFragment"
+      app:enterAnim="@anim/anim_slide_in_right"
+      app:exitAnim="@anim/anim_slide_out_left"
+      app:popEnterAnim="@anim/anim_slide_in_left"
+      app:popExitAnim="@anim/anim_slide_out_right" />
+    <action
+      android:id="@+id/action_accountFragment_to_updatePasswordFragment"
+      app:destination="@id/updatePasswordFragment"
+      app:enterAnim="@anim/anim_slide_in_right"
+      app:exitAnim="@anim/anim_slide_out_left"
+      app:popEnterAnim="@anim/anim_slide_in_left"
+      app:popExitAnim="@anim/anim_slide_out_right" />
+    <action
+      android:id="@+id/action_accountFragment_to_updateEnterpriseFragment"
+      app:destination="@id/updateEnterpriseFragment"
+      app:enterAnim="@anim/anim_slide_in_right"
+      app:exitAnim="@anim/anim_slide_out_left"
+      app:popEnterAnim="@anim/anim_slide_in_left"
+      app:popExitAnim="@anim/anim_slide_out_right" />
+  </fragment>
+
+
+  <fragment
+    android:id="@+id/profileFragment"
+    android:name="app.grand.tafwak.presentation.profile.ProfileFragment"
+    android:label="@string/profile">
+
+    <action
+      android:id="@+id/action_profileFragment_to_countries"
+      app:destination="@id/profileCountriesFragment"
+      app:enterAnim="@anim/anim_slide_in_right"
+      app:exitAnim="@anim/anim_slide_out_left"
+      app:popEnterAnim="@anim/anim_slide_in_left"
+      app:popExitAnim="@anim/anim_slide_out_right" />
+    <action
+      android:id="@+id/action_profileFragment_to_schoolGradeFragment"
+      app:destination="@id/schoolGradeFragment"
+      app:enterAnim="@anim/anim_slide_in_right"
+      app:exitAnim="@anim/anim_slide_out_left"
+      app:popEnterAnim="@anim/anim_slide_in_left"
+      app:popExitAnim="@anim/anim_slide_out_right" />
+  </fragment>
+  <fragment
+    android:id="@+id/updatePasswordFragment"
+    android:name="app.grand.tafwak.presentation.profile.changePassword.ChangePasswordFragment"
+    android:label="@string/change_password" />
+  <fragment
+    android:id="@+id/profileCountriesFragment"
+    android:name="app.grand.tafwak.presentation.auth.countries.CountriesFragment"
+    android:label="@string/change_country" />
+  <fragment
+    android:id="@+id/schoolGradeFragment"
+    android:name="app.grand.tafwak.presentation.auth.schoolInfo.grades.SchoolGradeFragment"
+    android:label="@string/change_study">
+    <action
+      android:id="@+id/action_schoolGradeFragment_to_schoolLevelsFragment2"
+      app:destination="@id/schoolLevelsFragment2"
+      app:enterAnim="@anim/anim_slide_in_right"
+      app:exitAnim="@anim/anim_slide_out_left"
+      app:popEnterAnim="@anim/anim_slide_in_left"
+      app:popExitAnim="@anim/anim_slide_out_right"
+      app:popUpTo="@+id/profileFragment"
+      app:popUpToSaveState="true" />
+  </fragment>
+  <fragment
+    android:id="@+id/schoolLevelsFragment2"
+    android:name="app.grand.tafwak.presentation.auth.schoolInfo.levels.SchoolLevelsFragment"
+    android:label="@string/change_study">
+    <argument
+      android:name="educational_stage_id"
+      app:argType="integer" />
+  </fragment>
+
+  <include app:graph="@navigation/nav_exams" />
+  <fragment
+    android:id="@+id/sectionDetailsFragment"
+    android:name="app.grand.tafwak.presentation.section_details.SectionDetailsFragment"
+    android:label="المنظفات">
+
+    <action
+      android:id="@+id/action_sectionDetailsFragment_to_cartFragment"
+      app:destination="@id/cartFragment"
+      app:enterAnim="@anim/anim_slide_in_right"
+      app:exitAnim="@anim/anim_slide_out_left"
+      app:popEnterAnim="@anim/anim_slide_in_left"
+      app:popExitAnim="@anim/anim_slide_out_right" />
+  </fragment>
+  <fragment
+    android:id="@+id/ordersCartFragment"
+    android:name="app.grand.tafwak.presentation.order_delivery.OrdersCartFragment"
+    android:label="@string/order">
+    <action
+      android:id="@+id/action_ordersCartFragment_to_orderConfirmedDialog"
+      app:destination="@id/orderConfirmedDialog" />
+  </fragment>
+  <fragment
+    android:id="@+id/cartFragment"
+    android:name="app.grand.tafwak.presentation.order_delivery.CartFragment"
+    android:label="@string/order">
+    <action
+      android:id="@+id/action_cartFragment_to_ordersCartDeliveryLocationFragment"
+      app:destination="@id/ordersCartDeliveryLocationFragment"
+      app:enterAnim="@anim/anim_slide_in_right"
+      app:exitAnim="@anim/anim_slide_out_left"
+      app:popEnterAnim="@anim/anim_slide_in_left"
+      app:popExitAnim="@anim/anim_slide_out_right" />
+  </fragment>
+  <fragment
+    android:id="@+id/ordersCartDeliveryLocationFragment"
+    android:name="app.grand.tafwak.presentation.order_delivery.OrdersCartDeliveryLocationFragment"
+    android:label="@string/delivery">
+    <action
+      android:id="@+id/action_ordersCartDeliveryLocationFragment_to_ordersCartFragment"
+      app:destination="@id/ordersCartFragment"
+      app:enterAnim="@anim/anim_slide_in_right"
+      app:exitAnim="@anim/anim_slide_out_left"
+      app:popEnterAnim="@anim/anim_slide_in_left"
+      app:popExitAnim="@anim/anim_slide_out_right" />
+  </fragment>
+  <dialog
+    android:id="@+id/orderConfirmedDialog"
+    android:name="app.grand.tafwak.presentation.order_delivery.OrderConfirmedDialog"
+    android:label="OrderConfirmedDialog" />
+  <fragment
+    android:id="@+id/myOrdersFragment"
+    android:name="app.grand.tafwak.presentation.my_orders.MyOrdersFragment"
+    android:label="MyOrdersFragment">
+    <action
+      android:id="@+id/action_myOrdersFragment_to_myOrderDetailsFragment"
+      app:destination="@id/myOrderDetailsFragment"
+      app:enterAnim="@anim/anim_slide_in_right"
+      app:exitAnim="@anim/anim_slide_out_left"
+      app:popEnterAnim="@anim/anim_slide_in_left"
+      app:popExitAnim="@anim/anim_slide_out_right" />
+  </fragment>
+  <fragment
+    android:id="@+id/myOrderDetailsFragment"
+    android:name="app.grand.tafwak.presentation.my_orders.MyOrderDetailsFragment"
+    android:label="طلبيه رقم  1234" />
+  <fragment
+    android:id="@+id/searchFragment"
+    android:name="app.grand.tafwak.presentation.search.SearchFragment"
+    android:label="SearchFragment" />
+  <fragment
+    android:id="@+id/companiesFragment"
+    android:name="app.grand.tafwak.presentation.companies.CompaniesFragment"
+    android:label="@string/all_companies" />
+  <fragment
+    android:id="@+id/notificationsFragment"
+    android:name="app.grand.tafwak.presentation.notifications.NotificationsFragment"
+    android:label="@string/notifications" />
+  <fragment
+    android:id="@+id/favoriteFragment"
+    android:name="app.grand.tafwak.presentation.favorite.FavoriteFragment"
+    android:label="@string/favorite" />
+  <fragment
+    android:id="@+id/updateEnterpriseFragment"
+    android:name="app.grand.tafwak.presentation.update_enterprise.UpdateEnterpriseFragment"
+    android:label="@string/tv_building_info" />
+
+</navigation>

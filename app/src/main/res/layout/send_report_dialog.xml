@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <data>
+
+  </data>
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatImageView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/dimen10"
+      android:src="@drawable/ic_line"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/tv_location_title"
+      style="@style/TextBoldFont"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/dimen20"
+      android:layout_marginBottom="@dimen/dimen50"
+      android:gravity="center"
+      android:text="@string/report"
+      android:textAllCaps="true"
+      android:textAppearance="@style/TextAppearance.AppCompat.Title"
+      android:textColor="@color/black"
+      app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+      android:id="@+id/report_radio"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      android:layout_margin="@dimen/dimen16"
+      app:layout_constraintTop_toBottomOf="@id/tv_location_title">
+
+      <RadioButton
+        android:id="@+id/wrong_product"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:buttonTint="@color/colorPrimaryDark"
+        android:checked="true"
+        android:text="@string/wrong_product"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/black" />
+
+      <RadioButton
+        android:id="@+id/wrong_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:buttonTint="@color/colorPrimaryDark"
+        android:text="@string/wrong_price"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/black" />
+
+    </RadioGroup>
+
+    <com.google.android.material.textfield.TextInputEditText
+      android:id="@+id/report"
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/dimen80"
+      android:layout_margin="@dimen/dimen16"
+      android:background="@drawable/corner_view_gray"
+      android:gravity="top|start"
+      android:hint="@string/more_info"
+      android:inputType="textPassword"
+      android:padding="10dp"
+      android:textAlignment="viewStart"
+      android:textAppearance="@style/TextAppearance.AppCompat.Small"
+      android:textColor="@color/colorPrimaryDark"
+      android:textColorHint="@color/black"
+      app:layout_constraintTop_toBottomOf="@id/report_radio" />
+
+    <androidx.appcompat.widget.AppCompatButton
+      android:id="@+id/confirm"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="@dimen/dimen12"
+      android:layout_marginTop="@dimen/dimen30"
+      android:layout_marginEnd="@dimen/dimen12"
+      android:layout_marginBottom="@dimen/dimen10"
+      android:background="@drawable/btn_accent"
+      android:text="@string/send_report"
+      android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+      android:textColor="@color/white"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/report" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
